@@ -1,0 +1,216 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap');
+
+:root {
+    --color-fuenteTitulo:#ffff;
+    --color-fuenteOpciones:#000;
+    --color-menuAnimacion:#1a3545;
+    --color-fondo:#1a354554;
+    --color-opciones:rgba(1,1,1,0.5);
+    --sombra:0 5px 25px rgb(1 1 1 /20%);
+}
+
+*{  
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+header{
+    position:absolute;
+    z-index:999;
+    top:0;
+    left:0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding:15px 200px;
+    transition: 0.5 ease;
+}
+
+header .tituloPrincipal{
+    color:var(--color-fuenteTitulo);
+    font-size:1.5rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+header .navegacion{
+    position:relative;
+}
+
+header .navegacion .menu-opciones a{
+    position:relative;
+    color: var(--color-fuenteTitulo);
+    text-decoration: none;
+    font-size: 1em;
+    margin-left: 30px;
+    transition: 0.3 ease;
+    font-weight: 500;
+}
+
+
+header .navegacion .menu-opciones a:before{
+    content: '';
+    position: absolute;
+    background: #fff;
+    width: 0;
+    height: 3px;
+    bottom: 0;
+    left: 0;
+    transition: 0.3s ease;
+}
+
+
+header .navegacion .menu-opciones a:hover:before{
+    width: 100%;
+}
+section{
+    padding:80px 200px;
+    overflow: hidden;
+}
+.inicio{
+    position:relative;
+    width:100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    background-color: var(--color-menuAnimacion);   
+}
+
+/*Consultar a companneros si les parece*/
+.inicio:before{
+    z-index:777;
+    content: '';
+    background: var(--color-fondo);
+    position: absolute;
+    width:100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+.inicio .contenedor{
+   z-index:888;
+   color: var(--color-fuenteTitulo);
+   width: 70%;
+   display:none;
+   margin-top: 50px;
+}
+.inicio .contenedor.activado{
+    display: block;
+}
+
+.inicio .contenedor h1{
+   font-size: 4em;
+   text-transform: uppercase; 
+   font-weight: 900;
+   line-height: 75px;
+   letter-spacing: 6px;
+   margin-bottom: 40px;
+
+}
+.inicio .contenedor h1 span{
+    font-weight: 600;
+    font-size: 1.2em;
+}
+.inicio .contenedor p{
+    margin-bottom: 65px;
+}
+
+.inicio .contenedor a{
+    
+    color: var(--color-fuenteTitulo)!important;
+    font-size: 20px;
+    font-weight: 500;
+    padding: 0.5em 1.2em;
+    background: rgba(0,0,0,0);
+    text-decoration: none;
+    border: 2px solid;
+    border-color: var(--color-fuenteTitulo);
+    border-radius: 8px;
+    transition: all 1s ease;
+    position: relative;
+}
+.inicio .contenedor a:hover{
+    background: var(--color-menuAnimacion);
+    border-color: var(--color-menuAnimacion);
+    color: #fff !important;
+}
+
+.inicio video{
+    object-fit: cover;
+    z-index: 000;
+    position: absolute;
+    top:0;
+    left:0;
+    width: 100%;
+    height: 100%;
+}
+
+/*Deslizante de videos*/
+.deslizante{
+    z-index:888;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-color: var(--color-fuenteTitulo);
+    transform: translateY(-275px) rotate(270deg);
+    left:62%
+}
+.deslizante .deslizanteBoton{
+    background: #fff;
+    width: 17px;
+    height: 17px;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: var(--sombra);
+    transition: 0.3s ease;
+}
+
+.deslizante .deslizanteBoton:not(last-child){
+    margin-right: 20px;
+}
+
+.deslizante .deslizanteBoton:hover{
+    transform: scale(1.5);
+
+}
+
+.deslizante .deslizanteBoton.activado{
+    background: var(--color-menuAnimacion);
+}
+.videosLookingPlace{
+    position: relative;
+    width: 100%;
+    clip-path: circle(0.8% at 48% 100%);
+
+}
+.videosLookingPlace.activado{ 
+    clip-path: circle(150% at 49% 98%);
+    transition: 2s ease;
+    transition-property: clip-path ;
+}
+
+@media(max-width:1040px){
+    header{
+        padding:15px 60px;
+    }
+    section{
+        padding:100px 60px;
+    }
+    .deslizante{
+        z-index:888;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transform: translateY(55px);
+        left:0.1%;
+    }
+}
+
+
