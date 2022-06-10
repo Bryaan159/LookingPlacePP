@@ -36,33 +36,6 @@ header .tituloPrincipal{
     text-decoration: none;
 }
 
-header .navegacion{
-    position:relative;
-}
-
-header .navegacion .menu-opciones a{
-    position:relative;
-    color: var(--color-fuenteTitulo);
-    text-decoration: none;
-    font-size: 1em;
-    margin-left: 30px;
-    transition: 0.3 ease;
-    font-weight: 500;
-}
-
-
-header .navegacion .menu-opciones a:before{
-    content: '';
-    position: absolute;
-    background: #fff;
-    width: 0;
-    height: 3px;
-    bottom: 0;
-    left: 0;
-    transition: 0.3s ease;
-}
-
-
 header .navegacion .menu-opciones a:hover:before{
     width: 100%;
 }
@@ -90,6 +63,24 @@ section{
     height: 100%;
     top: 0;
     left: 0;
+}
+.inicio .contenedor img{
+    height: auto;
+	width: 225px;
+    margin-left: 150px;
+    animation: flotar 6s ease-in-out infinite;
+}
+.inicio .contenedor .informacion{
+    width: 570px;
+    margin-left: 60px;
+}
+.inicio .contenedor .principal{
+    width: 1130px;
+	max-width: 95%;
+	margin: 0 auto;
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
 }
 
 .inicio .contenedor{
@@ -120,25 +111,6 @@ section{
     margin-bottom: 65px;
 }
 
-.inicio .contenedor a{
-    
-    color: var(--color-fuenteTitulo)!important;
-    font-size: 20px;
-    font-weight: 500;
-    padding: 0.5em 1.2em;
-    background: rgba(0,0,0,0);
-    text-decoration: none;
-    border: 2px solid;
-    border-color: var(--color-fuenteTitulo);
-    border-radius: 8px;
-    transition: all 1s ease;
-    position: relative;
-}
-.inicio .contenedor a:hover{
-    background: var(--color-menuAnimacion);
-    border-color: var(--color-menuAnimacion);
-    color: #fff !important;
-}
 
 .inicio video{
     object-fit: cover;
@@ -194,6 +166,18 @@ section{
     transition: 2s ease;
     transition-property: clip-path ;
 }
+
+@keyframes flotar{
+    0%{
+      transform: translateY(0px);
+    }
+    50%{
+      transform: translateY(-15px);
+    }
+    100%{
+      transform: translateY(0px);
+    }
+ }
 
 @media(max-width:1040px){
     header{
