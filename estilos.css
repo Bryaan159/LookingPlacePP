@@ -74,6 +74,7 @@ section{
     width: 570px;
     margin-left: 60px;
 }
+
 .inicio .contenedor .principal{
     width: 1130px;
 	max-width: 95%;
@@ -161,6 +162,27 @@ section{
     clip-path: circle(0.8% at 48% 100%);
 
 }
+/* Boton Conocer */
+
+.inicio .contenedor a{
+
+    color: var(--color-fuenteTitulo)!important;
+    font-size: 20px;
+    font-weight: 500;
+    padding: 0.5em 1.2em;
+    background: rgba(0,0,0,0);
+    text-decoration: none;
+    border: 2px solid;
+    border-color: var(--color-fuenteTitulo);
+    border-radius: 8px;
+    transition: all 1s ease;
+    position: relative;
+}
+.inicio .contenedor a:hover{
+    background: var(--color-menuAnimacion);
+    border-color: var(--color-menuAnimacion);
+    color: #fff !important;
+}
 .videosLookingPlace.activado{ 
     clip-path: circle(150% at 49% 98%);
     transition: 2s ease;
@@ -197,4 +219,82 @@ section{
     }
 }
 
+@media only screen and (max-width: 500px){
+
+    .deslizante{
+        z-index:888;
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-color: var(--color-fuenteTitulo);
+        transform: translateY(-275px) rotate(270deg);
+        left:62%
+    }
+
+    .inicio .contenedor h1{
+        font-size: 32px;
+        text-transform: uppercase; 
+        font-weight: 900;
+        line-height: 55px;
+        letter-spacing: 6px;
+        margin-bottom: 40px;
+        margin-top: 25px;
+     
+    }
+
+    .inicio .contenedor .principal{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .inicio .contenedor img{
+        height: auto;
+        margin-right: 90px;
+        align-self: center;
+        position: static;
+        width: 120px;
+        animation: flotar 6s ease-in-out infinite;
+    }
+
+    .inicio .contenedor .informacion{
+        width: 300px;
+        margin-left: 60px;
+    }
+
+    .inicio .contenedor p{
+        text-justify: inter-word;
+        margin-left: 15px;
+    }
+
+    header .tituloPrincipal{
+        font-size: 2.2rem;
+        margin-left: -18px;
+        margin-top: 10px;
+    }
+
+}
+
+@media only screen and (min-width:700px) and (max-width:1000px){
+    .inicio .contenedor img{
+        height: auto;
+        margin-right: 50px;
+        align-self: left;
+        position: relative;
+        width: 220px;
+        margin-bottom: 50px;
+        animation: flotar 6s ease-in-out infinite;
+    }
+
+    .inicio .contenedor .principal{
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
+
+    header .tituloPrincipal{
+        font-size: 2.8rem;
+    }
+
+}
 
